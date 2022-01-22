@@ -26,8 +26,8 @@ async function onFormSubmit(event) {
   options.pageNumber = 1;
   refs.btnLoadMore.classList.add('is-hidden');
 
-  if (onFormInput.value.trim() === '') {
-    Notify.info('You see photo');
+    if (onFormInput.value.trim() === '') {
+      return Notify.failure('Enter your request.');
   }
   try {
     const response = await imgItems(onFormInput.value);
